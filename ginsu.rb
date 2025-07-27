@@ -4,7 +4,7 @@
 # Copyright (c) UnaMesa Association 2004-2008
 # License: Creative Commons Attribution ShareAlike 3.0 License http://creativecommons.org/licenses/by-sa/3.0/
 
-require 'splitter'
+require_relative 'splitter'
 require 'optparse'
 require 'ostruct'
 

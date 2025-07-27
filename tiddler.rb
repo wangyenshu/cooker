@@ -7,7 +7,6 @@ require 'cgi'
 require 'open-uri'
 require 'time'
 require 'date'
-require 'date/format'
 
 # Tiddler line in recipe file:
 #	tiddler:TiddlerName.[js|tiddler]

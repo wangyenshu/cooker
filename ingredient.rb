@@ -6,8 +6,8 @@
 require 'cgi'
 require 'tempfile'
 
-require 'tiddler'
-require 'splitter'
+require_relative 'tiddler'
+require_relative 'splitter'
 
 class String
 	def to_file(file_name) #:nodoc:

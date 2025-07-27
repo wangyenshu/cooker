@@ -4,7 +4,7 @@
 # Copyright (c) UnaMesa Association 2004-2008
 # License: Creative Commons Attribution ShareAlike 3.0 License http://creativecommons.org/licenses/by-sa/3.0/
 
-require 'recipe'
+require_relative 'recipe'
 require 'optparse'
 require 'ostruct'
 

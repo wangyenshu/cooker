@@ -3,7 +3,7 @@
 # Copyright (c) UnaMesa Association 2004-2008
 # License: Creative Commons Attribution ShareAlike 3.0 License http://creativecommons.org/licenses/by-sa/3.0/
 
-require 'tiddler'
+require_relative 'tiddler'
 require 'iconv'
 #require 'open-uri'
 #require 'net/http'
@@ -17,7 +17,7 @@ class Splitter
 		dirname = outdir.nil? || outdir.empty? ? @filename : File.join(outdir, File.basename(@filename))
 		while !dirset do
 			@dirname = dirname + "." + dirnum.to_s
-			if(File.exists?(@dirname))
+			if(File.exist?(@dirname))
 				dirnum += 1
 			else
 				Dir.mkdir(@dirname)
@@ -85,7 +85,7 @@ private
 			dirname = @dirname
 			if(@@usesubdirectories)
 				dirname = File.join(@dirname, "plugins")
-				if(!File.exists?(dirname))
+				if(!File.exist?(dirname))
 					Dir.mkdir(dirname)
 				end
 			end
@@ -102,7 +102,7 @@ private
 			dirname = @dirname
 			if(@@usesubdirectories)
 				dirname = File.join(@dirname, "svg")
-				if(!File.exists?(dirname))
+				if(!File.exist?(dirname))
 					Dir.mkdir(dirname)
 				end
 			end
@@ -139,7 +139,7 @@ private
 		dirname = @dirname
 		if(@@usesubdirectories)
 			dirname = File.join(@dirname, subdir)
-			if(!File.exists?(dirname))
+			if(!File.exist?(dirname))
 				Dir.mkdir(dirname)
 			end
 		end

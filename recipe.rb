@@ -3,7 +3,7 @@
 # Copyright (c) UnaMesa Association 2004-2008
 # License: Creative Commons Attribution ShareAlike 3.0 License http://creativecommons.org/licenses/by-sa/3.0/
 
-require 'ingredient'
+require_relative 'ingredient'
 require "fileutils"
 require 'net/http'
 require 'uri'
@@ -227,7 +227,7 @@ protected
 					file = File.join(dirname,value)
 				end
 				addAddOns(key, file, attributes)
-				loadSubrecipe(file + ".deps",false) if File.exists?(file + ".deps")
+				loadSubrecipe(file + ".deps",false) if File.exist?(file + ".deps")
 			elsif(line =~ /\=/)
 				c = line.index('=')
 				key = line[0, c].strip
@@ -237,7 +237,7 @@ protected
 			else
 				file = File.join(dirname, line.chomp)
 				@ingredients << Ingredient.new(file, "line")
-				loadSubrecipe(file + ".deps",false) if(File.exists?(file + ".deps"))
+				loadSubrecipe(file + ".deps",false) if(File.exist?(file + ".deps"))
 			end
 		end
 	end
